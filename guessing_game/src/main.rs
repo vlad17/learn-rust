@@ -1,4 +1,7 @@
-// use rand::Rng;
+extern crate rand;
+
+use rand::Rng;
+
 use std::cmp::Ordering;
 use std::io;
 
@@ -13,7 +16,7 @@ fn attempt_to_grab_number() -> Option<u32> {
 }
 
 fn main() {
-    let secret = 3; //rand::thread_rng().gen_range(1, 101);
+    let secret = rand::thread_rng().gen_range(1, 101);
     println!("Secret really is {}", secret);
 
     println!("Now guess the secret");
