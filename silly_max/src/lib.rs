@@ -43,3 +43,20 @@ pub mod silly {
         })
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::silly;
+
+    #[test]
+    fn max_empty() {
+        let elist: [i32; 0] = [];
+        assert_eq!(silly::mmmax(&elist), None);
+    }
+
+    #[test]
+    fn max_basic() {
+        let elist = [1, 3, 5, 2, 1];
+        assert_eq!(*silly::mmmax(&elist).unwrap(), 5);
+    }
+}
